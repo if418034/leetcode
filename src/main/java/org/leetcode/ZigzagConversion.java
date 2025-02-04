@@ -3,13 +3,15 @@ package org.leetcode;
 public class ZigzagConversion {
     public static void main(String[] args) {
 //        System.out.println(convert("PAYPALISHIRING", 4));
-//        System.out.println(convert("PAYPALISHIRINGAGAIN", 3));
+        System.out.println(convert("PAYPALISHIRINGAGAIN", 3));
 //        System.out.println(convert("PAYPALISHIRING", 3));
-        System.out.println(convert("PAYPALISHIRINGAGAINISNTITAWESOME", 7));
+//        System.out.println(convert("ABC", 2));
 
     }
 
     public static String convert(String s, int numRows) {
+        if (numRows > s.length()) return s;
+        if (numRows == 1) return s;
         int n;
         String temp = "";
         int first = numRows + (numRows - 2);
@@ -17,6 +19,7 @@ public class ZigzagConversion {
             boolean flag = (i == 0 || i == numRows - 1);
             n = i;
             System.out.println(temp);
+            System.out.println();
             temp += s.charAt(n);
             System.out.print(n + " ");
             for (int j = 0; j < s.length(); j++) {
