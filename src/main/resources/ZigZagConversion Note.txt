@@ -1,0 +1,128 @@
+P A Y P A L I S H I R  I  N  G
+0 1 2 3 4 5 6 7 8 9 10 11 12 13
+
+P   A   H   N
+A P L S I I G
+Y   I   R
+
+x = 3
+0 4 8 12	        PAHN
+1 3 5 7 9 11 13	    APLSIIG
+2 6 10		        YIR
+
+>>PAHNAPLSIIGYIR<<
+//PAHNAPLSIIGYIR//
+==================================================================================
+
+P   A   H   N   A
+A P L S I I G G I
+Y   I   R   A   N
+
+x= 4
+0 4 8 12 16	        	PAHNAA
+1 3 5 7 9 11 13 15 17	PLSIIGGI
+2 6 10 14 18		    YIRAN
+
+>>PAHNAAPLSIIGGIYIRAN<<
+//PAHNAAPLSIIGGIYIRAN//
+==================================================================================
+
+P A Y P A L I S H I R  I  N  G  A  G  A  I  N
+0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18
+
+==================================================================================
+
+P     I    N
+A   L S  I G
+Y A   H R
+P     I
+
+0 6 12		PIN
+1 5 7 11 13	ALSIG
+2 4 8 10	YAHR
+3 9		    PI
+
+>>PINALSIGYAHRPI<<
+//PINALSIGYAHRPI//
+==================================================================================
+
+Pseudo
+if (x % 2 != 0) -> median = (1 + x / 2)
+
+//first and last
+if (row == 0 || row == x) -> (x + (x - 2))
+//median
+if (row == median) -> (x - 1)
+//any other row
+else ->
+	if (row < median) -> x + 1 then 2
+	else
+
+
+==================================================================================
+
+P       H       A
+A     S I     G I
+Y   I   R   A   N
+P L     I G
+A       N
+
+0 8 16 		    PHA
+1 7 9 15 17 	ASIGI
+2 6 10 14 18 	YIRAN
+3 5 11 13 	    PLIG
+4 12 		    AN
+
+>>PHAASIGIYIRANPLIGAN<<
+//PHAASIGIYIRANPLIGAN//
+
+==================================================================================
+
+1 first
+2 1
+3 2
+4 3
+5 median
+6 4
+7 5
+8 6
+9 last
+
+==================================================================================
+
+P  A  Y  P  A  L  I  S  H  I  R  I  N  G  A  G  A  I  N  I  S  N  T  I  T  A  W  E  S  O  M  E
+0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31
+
+==================================================================================
+x = 7
+P           N           T
+A         I G         I A
+Y       R   A       T   W
+P     I     G     N     E
+A   H       A   S       S
+L S         I I         O E
+I           N           M
+
+0  12  24 			    PNT		    +12   +12			    first = (x + (x - 2)) = 12
+1  11  13  23  25		AIGIA		+10   +2   +10  +2		other = first - (2 * 1) *10*, then -> first - other *2*
+2  10  14  22  26 		YRATW		+8    +4   +8   +4		other = first - (2 * 2) *8*, then -> first - other *4*
+3  9   15  21  27		PIGNE		+6    +6   +6   +6		other = first - (2 * 3) *6*, then -> first - other *6*
+4  8   16  20  28		AHASS       +4    +8   +4   +8		other = first - (2 * 4) *4*, then -> first - other *8*
+5  7   17  19  29		LSIIOE      +2    +10  +2   +10		other = first - (2 * 5) *2*, then -> first - other *10*
+6  18  30 			    INM         +12   +12			    last = (x + (x - 2)) = 12
+
+>>PNTAIGIAYRATWPIGNEAHASSLSIIOEINM<<
+//PNTAIGIAYRATWPIGNEAHASSLSIIOEINM//
+==================================================================================
+x = 4
+P     I     N     N
+A   L S   I G   I
+Y A   H R   A A
+P     I     G
+
+0 6 12 18 			PINN		+6   +6   +6			    first = (x + (x - 2)) = 6
+1 5 7 11 13 17		ALSIGI		+4   +2   +4   +2   +4		other = first - (2 * 1) *4*, then -> first - other *2*
+2 4 8 10 14 16		YAHRAA		+2   +4   +2   +4   +2		other = first - (2 * 2) *2*, then -> first - other *4*
+3 9 15				PIG		    +6   +6				        first = (x + (x - 2)) = 6
+
+>>PINNALSIGIYAHRAAPIG<<
